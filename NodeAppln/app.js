@@ -1,5 +1,4 @@
 const express=require('express');
-const log=require('./loggers/log');
 const routes=require('./routes/index');
 const path=require('path');
 const exphbs  = require('express-handlebars');
