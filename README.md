@@ -13,9 +13,9 @@ a. login-app : used to display login html and to check whether used is authentic
 b. signup-app : used to display singup html and to register the new user
 c. form-modal-app : It is used to display add/edit form in popup.
 d. orders-app : It is used to display orders tables and from this component we will open form-modal component to add/edit the orders.
--- orders-routing-servic.ts is the service used to perform CRUD operation calls to backends.All the http calls are done from this service.
+-- orders-service.ts is the service used to perform CRUD operation calls to backends.All the http calls are done from this service.
 -- In app.module.ts, need to import mat-button,mat-modal modules.
--- Routing between login, signup and orders is done in app.module.ts
+-- Routing between login, signup and orders is done in app.module.ts in app-routing service.
 -- Front end part have to run localhost:4200
 -- node_modules folder is removed, run npm install command to get all the dependencies.
 -- npm serve to start the application 
