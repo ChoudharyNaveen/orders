@@ -54,35 +54,22 @@ if(this.action != "Edit Order")
   }
     const dialogRef = this.dialog.open(FormModalComponent,obj );
     dialogRef.afterClosed().subscribe(result => {
-      if(this.action != "Edit Order")
-      {
-      this.orderService.postOrder(result).subscribe(order => {
-        console.log("After Insertion",order);
-        this.getOrders();
-      })
-    }
-    else{
-        this.orderService.editOrder(this.editId,result).subscribe(order =>{
-          console.log("After Updation",order);
-          this.getOrders();
-        })
-    }
+      this.getOrders();
     });
   }
 
   newOrder(){
     this.action="Add Order";
-    this.editOrder=null;
+    this.editId=null;
     this.openDialog({},'Add Order');
-
   }
 
   editOrder(order)
   {
     this.editId=order._id;
+    this.action="Edit Order";
     this.orderService.getOrderById(order._id).subscribe((order)=>{
       this.openDialog(order,'Edit Order')
-      this.action="Edit Order";
     })
   }
 
